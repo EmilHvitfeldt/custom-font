@@ -1,0 +1,10 @@
+/*-- scss:defaults --*/
+@font-face {
+    font-family: 'VictorMono';
+    src: url('../../../../../VictorMono-Medium.woff2') format('woff2'),
+         url('../../../../../VictorMono-Medium.woff') format('woff');
+}
+
+$font-family-monospace: 'VictorMono';
+
+/*-- scss:rules --*/

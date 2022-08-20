@@ -1,0 +1,27 @@
+---
+format:
+  revealjs: 
+    theme: [default, custom.scss]
+---
+
+## solarized
+
+```{r}
+#| echo: true
+library(tidyverse)
+
+models <- tibble::tribble(
+  ~model_name,    ~ formula,
+  "length-width", Sepal.Length ~ Petal.Width + Petal.Length,
+  "interaction",  Sepal.Length ~ Petal.Width * Petal.Length
+)
+
+iris |> 
+  nest_by(Species) %>% 
+  left_join(models, by = character()) %>% 
+  rowwise(Species, model_name) %>% 
+  mutate(model = list(lm(formula, data = data))) %>% 
+  summarise(broom::glance(model))
+```
+
+
