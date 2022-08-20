@@ -4,8 +4,6 @@ format:
     theme: [default, custom.scss]
 ---
 
-## solarized
-
 ```{r}
 #| echo: true
 library(tidyverse)
